@@ -9,7 +9,7 @@ import static core.ExtremumLogicConstants.MIN;
 
 public class AlternatingVariableDescentMethod {
     private ExtremumFinder ef = new GoldenSectionMethod();
-    private static double EPS = .00000000001;
+    private static double EPS = .0000001;
     int k = 1000;
 
     public void find(double a, double b, MultiVarsFunction f, double... args) {

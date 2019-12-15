@@ -1,7 +1,7 @@
 package core;
 
 public class AlternatingVariableDescentMethodC {
-    private double f(double ... x){return  Math.pow(x[0], 2) - x[1] / 2.0;}
+    private double f(double ... x){return  2 * x[0] * x[0] + x[1] * x[1] - x[0] * x[1];/*Math.pow(x[0], 2) - x[1] / 2.0;*/}
 
     private double goldenSection(int var_index, double eps, double a, double b, int max_steps_count, double... vars)
     {
