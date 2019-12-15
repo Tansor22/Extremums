@@ -9,15 +9,13 @@ import static core.ExtremumLogicConstants.MIN;
 
 public class AlternatingVariableDescentMethod {
     private ExtremumFinder ef = new GoldenSectionMethod();
-    private static double EPS = .0000001;
-    int k = 1000;
 
-    public void find(double a, double b, MultiVarsFunction f, double... args) {
+    public void find(int k, double eps, double a, double b, MultiVarsFunction f, double... args) {
         // TODO
         ((MultiVarsSupport) ef).n = args.length;
 
         // TODO
-        ((GoldenSectionMethod) ef).EPS = EPS;
+        ((GoldenSectionMethod) ef).EPS = eps;
         double B = f.$(args), A;
         int stepsElapsed = 0;
         double delta = 0.0;
@@ -38,7 +36,7 @@ public class AlternatingVariableDescentMethod {
             B = f.$(args);
 
             delta = Math.abs(A - B);
-            if (delta <= EPS) {
+            if (delta <= eps) {
                 isCalculated = true;
                 stepsElapsed = i + 1;
                 break;
